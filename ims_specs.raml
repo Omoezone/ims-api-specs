@@ -1,2 +1,202 @@
 #%RAML 1.0
 title: ims_specs
+description: The main specs for my bachelor projects API
+version: v1
+mediaType: 
+  - application/json
+
+types: 
+  User: !include types/userType.raml
+  UserBase: !include types/userBaseType.raml
+  Item: !include types/itemType.raml
+  ItemBase: !include types/itemBaseType.raml
+  Collection: !include types/collectionType.raml
+  CollectionBase: !include types/collectionBaseType.raml
+    
+/users:
+  get:
+    description: Get a list of all users
+    responses:
+      200:
+        body:
+          type: User[]
+
+  post:
+    description: Create a new user
+    body:
+      application/json:
+        type: UserBase
+    responses:
+      201:
+        description: User created successfully
+        body:
+          application/json:
+            type: UserBase
+      400:
+        description: Invalid user data provided
+      409:
+        description: A conflic happend with the request (mysql)
+
+  /{userId}:
+    uriParameters:
+      userId: 
+        description: The id of the user
+        type: integer
+        required: true
+        
+    get:
+      description: Get a specific user by its ID
+      responses:
+        200:
+          body:
+            type: User
+        404:
+          body:
+            application/json:
+              example:
+                error: "User not found"
+
+    put:
+      description: Update an existing user
+      body:
+        type: User
+      responses:
+        200:
+          description: User successfully updated
+        404:
+          description: User not found
+
+    delete:
+      description: Delete a user by ID
+      responses:
+        204:
+          description: User successfully deleted
+        404:
+          description: User not found
+
+/collections:
+  get:
+    description: Get a list of all collections
+    responses:
+      200:
+        body:
+          type: Collection[]
+
+  post:
+    description: Create a new collection for a user
+    queryParameters:
+      userId:
+        description: The ID of the user for whom the collection is created
+        type: integer
+        required: true
+    body:
+      application/json:
+        type: CollectionBase
+    responses:
+      201:
+        description: Collection created successfully
+        body:
+          application/json:
+            type: CollectionBase
+      400:
+        description: Invalid collection data provided
+
+  /{collectionId}:
+    uriParameters:
+      collectionId:
+        description: The ID of the collection
+        type: integer
+        required: true
+
+    get:
+      description: Get a specific collection by ID
+      responses:
+        200:
+          body:
+            type: Collection
+        404:
+          description: Collection not found
+
+    delete:
+      description: Delete a collection by ID
+      responses:
+        204:
+          description: Collection successfully deleted
+        404:
+          description: Collection not found
+
+  /{collectionId}/items:
+    uriParameters:
+        collectionId:
+          description: The ID of the collection
+          type: integer
+          required: true
+    get:
+      description: Get a specific collection by ID along with all related items
+      responses:
+        200:
+          description: Returns the collection with all related items
+          body:
+            application/json:
+              type: Collection
+        404:
+          description: Collection not found
+/items:
+  get:
+    description: Get a list of all items
+    responses:
+      200:
+        body:
+          type: Item[]
+  post:
+    description: Create a new item in a collection
+    queryParameters:
+      collectionId:
+        description: The ID of the collection to which the item belongs
+        type: integer
+        required: true
+    body:
+      application/json:
+        type: ItemBase
+    responses:
+      201:
+        description: Item created successfully
+        body:
+          application/json:
+            type: ItemBase
+      400:
+        description: Invalid item data provided
+
+  /{itemId}:
+    uriParameters:
+      itemId:
+        description: The id of the item
+        type: integer
+        required: true
+
+    get:
+      description: Get a specific item by ID
+      responses:
+        200:
+          body:
+            type: Item
+        404:
+          description: Item not found
+
+    put:
+      description: Update an existing item
+      body:
+        type: Item
+      responses:
+        200:
+          description: Item successfully updated
+        404:
+          description: Item not found
+
+    delete:
+      description: Delete an item by ID
+      responses:
+        204:
+          description: Item successfully deleted
+        404:
+          description: Item not found
