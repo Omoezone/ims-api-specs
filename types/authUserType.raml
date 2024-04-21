@@ -1,14 +1,15 @@
 #%RAML 1.0 DataType
 type: object
 properties:
-  user: UserBaseType
+  user: UserType
   authToken: AuthTokenType
 example:
   user:
-    id: 123
-    username: "user123"
-    fullName: "John Doe"
+    firstName: "John"
+    lastName: "Doe"
     email: "john.doe@example.com"
+    age: 30
+    gender: "Male"
   authToken:
     token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
     tokenType: "Bearer"
