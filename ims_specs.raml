@@ -203,9 +203,21 @@ types:
 /auth:
   /login:
     post:
-      description: Login Query for a user
-      
-      
+      description: Authenticates a user based on username and password and returns user details along with a JWT token.
+      body:
+        application/json:
+          type: UserCredentials
+      responses:
+        200:
+          body:
+            application/json:
+              type: AuthResponse
+              description: Authentication successful, returns user details and token.
+        401:
+          description: Unauthorized, invalid username or password.
+        500:
+          description: Internal server error, could be due to server faults or misconfigurations.
+        
 
 
 
