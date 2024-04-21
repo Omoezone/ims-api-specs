@@ -1,0 +1,28 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  collectionId: integer
+  userId: integer
+  items: Item[]?
+example:
+  collectionId: 501
+  userId: 1
+  items:
+    - itemId: 101
+      name: "Chair"
+      price: 150
+      amount: 20
+      type: "Furniture"
+      width: 45
+      height: 90
+      color: "Black"
+      collectionId: 501
+    - itemId: 102
+      name: "Chair"
+      price: 322
+      amount: 1
+      type: "Furniture"
+      width: 45
+      height: 90
+      color: "Red"
+      collectionId: 501
