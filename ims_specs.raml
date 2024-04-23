@@ -75,7 +75,36 @@ types:
           description: User successfully deleted
         404:
           description: User not found
-
+  /{userId}/collections:
+    uriParameters:
+      userId:
+        description: The ID of the user whose collections are to be fetched
+        type: integer
+        required: true
+    get:
+      description: Get all collections belonging to a specific user
+      responses:
+        200:
+          body:
+            type: Collection[]
+            application/json:
+              example: |
+                [
+                  {
+                    "id": 1,
+                    "name": "Summer Vacation Photos",
+                    "description": "A collection of my summer travels.",
+                    "userId": 123
+                  },
+                  {
+                    "id": 2,
+                    "name": "Favorite Recipes",
+                    "description": "Collection of favorite cooking recipes.",
+                    "userId": 123
+                  }
+                ]
+        404:
+          description: No collections found for the given user ID
 /collections:
   get:
     description: Get a list of all collections
