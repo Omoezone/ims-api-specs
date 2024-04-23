@@ -16,6 +16,13 @@ types:
   AuthUserType: !include types/authUserType.raml
 
 /users:
+  get:
+    description: Get a list of all users
+    responses:
+      200:
+        body:
+          type: User[]
+
   post:
     description: Create a new user
     body:
@@ -80,6 +87,7 @@ types:
         200:
           body:
             type: CollectionBase[]
+
         404:
           description: No collections found for the given user ID
 /collections:
