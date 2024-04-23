@@ -89,6 +89,21 @@ types:
             type: CollectionBase[]
         404:
           description: No collections found for the given user ID
+
+    post:
+      description: Create a new collection for a user
+      body:
+        application/json:
+          type: CollectionBase
+      responses:
+        201:
+          description: Collection created successfully
+          body:
+            application/json:
+              type: CollectionBase
+        400:
+          description: Invalid collection data provided
+
 /collections:
   get:
     description: Get a list of all collections
@@ -96,25 +111,6 @@ types:
       200:
         body:
           type: Collection[]
-
-  post:
-    description: Create a new collection for a user
-    queryParameters:
-      userId:
-        description: The ID of the user for whom the collection is created
-        type: integer
-        required: true
-    body:
-      application/json:
-        type: CollectionBase
-    responses:
-      201:
-        description: Collection created successfully
-        body:
-          application/json:
-            type: CollectionBase
-      400:
-        description: Invalid collection data provided
 
   /{collectionId}:
     uriParameters:
