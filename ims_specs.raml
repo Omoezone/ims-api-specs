@@ -75,34 +75,34 @@ types:
           description: User successfully deleted
         404:
           description: User not found
-  /{userId}/collections:
-    uriParameters:
-      userId:
-        description: The ID of the user whose collections are to be fetched
-        type: integer
-        required: true
-    get:
-      description: Get all collections belonging to a specific user
-      responses:
-        200:
-          body:
-            type: CollectionBase[]
-        404:
-          description: No collections found for the given user ID
+    /collections:
+      uriParameters:
+        userId:
+          description: The ID of the user whose collections are to be fetched
+          type: integer
+          required: true
+      get:
+        description: Get all collections belonging to a specific user
+        responses:
+          200:
+            body:
+              type: CollectionBase[]
+          404:
+            description: No collections found for the given user ID
 
-    post:
-      description: Create a new collection for a user
-      body:
-        application/json:
-          type: CollectionBase
-      responses:
-        201:
-          description: Collection created successfully
-          body:
-            application/json:
-              type: CollectionBase
-        400:
-          description: Invalid collection data provided
+      post:
+        description: Create a new collection for a user
+        body:
+          application/json:
+            type: CollectionBase
+        responses:
+          201:
+            description: Collection created successfully
+            body:
+              application/json:
+                type: CollectionBase
+          400:
+            description: Invalid collection data provided
 
 /collections:
   get:
