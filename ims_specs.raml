@@ -75,29 +75,6 @@ types:
           description: User successfully deleted
         404:
           description: User not found
-    /collections:
-      get:
-        description: Get all collections belonging to a specific user
-        responses:
-          200:
-            body:
-              type: CollectionBase[]
-          404:
-            description: No collections found for the given user ID
-
-      post:
-        description: Create a new collection for a user
-        body:
-          application/json:
-            type: CollectionBase
-        responses:
-          201:
-            description: Collection created successfully
-            body:
-              application/json:
-                type: CollectionBase
-          400:
-            description: Invalid collection data provided
 
 /collections:
   get:
@@ -147,6 +124,8 @@ types:
               type: Collection
         404:
           description: Collection not found
+  /new:
+
 /items:
   get:
     description: Get a list of all items
