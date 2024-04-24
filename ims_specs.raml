@@ -76,11 +76,6 @@ types:
         404:
           description: User not found
     /collections:
-      uriParameters:
-        userId:
-          description: The ID of the user whose collections are to be fetched
-          type: integer
-          required: true
       get:
         description: Get all collections belonging to a specific user
         responses:
