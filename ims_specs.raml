@@ -83,9 +83,14 @@ types:
       200:
         body:
           type: Collection[]
-          
+
   post:
         description: Create a new collection for a user
+        queryParameters:
+          userId:
+            description: The ID of the user to create a collection for
+            type: integer
+            required: true
         body:
           application/json:
             type: CollectionBase
