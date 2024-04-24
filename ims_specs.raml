@@ -83,6 +83,21 @@ types:
       200:
         body:
           type: Collection[]
+          
+  post:
+        description: Create a new collection for a user
+        body:
+          application/json:
+            type: CollectionBase
+        responses:
+          201:
+            description: Collection created successfully
+            body:
+              application/json:
+                type: CollectionBase
+          400:
+            description: Invalid collection data provided
+
 
   /{collectionId}:
     uriParameters:
