@@ -12,6 +12,7 @@ types:
   ItemBase: !include types/itemBaseType.raml
   Collection: !include types/collectionType.raml
   CollectionBase: !include types/collectionBaseType.raml
+  CollectionNew: !include types/newCollection.raml
   UserCredentials: !include types/userCredentials.raml
   AuthUserType: !include types/authUserType.raml
 
@@ -93,7 +94,7 @@ types:
         required: true
     body:
       application/json:
-        type: 
+        type: CollectionNew
     responses:
       201:
         description: Collection created successfully
