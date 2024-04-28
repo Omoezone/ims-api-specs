@@ -235,7 +235,15 @@ types:
       body:
         application/json:
           type: AuthUserType
-        
+      responses:
+        200:
+          body:
+            application/json:
+              type: AuthUserType
+        401: 
+          description: Unauthorized, invalid JWT
+        500: 
+          description: Internal server error
         
 
 
