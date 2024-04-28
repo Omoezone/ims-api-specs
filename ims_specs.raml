@@ -232,7 +232,10 @@ types:
   /verify:
     post: 
       description: Verify the JWT of a user
-      
+      body:
+        application/json:
+          type: AuthUserType
+        
         
 
 
