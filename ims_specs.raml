@@ -15,7 +15,7 @@ types:
   CollectionNew: !include types/newCollection.raml
   UserCredentials: !include types/userCredentials.raml
   AuthUserType: !include types/authUserType.raml
-  AuthTokenType: !include 
+  AuthTokenType: !include types/authTokenType.raml
 
 /users:
   get:
@@ -235,7 +235,7 @@ types:
       description: Verify the JWT of a user
       body:
         application/json:
-          type: string
+          type: AuthTokenType
       responses:
         200:
           body:
