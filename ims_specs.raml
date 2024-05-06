@@ -222,7 +222,10 @@ types:
     get: 
       description: Get all items for a specific user
       responses:
-        type: Item
+        200:
+          body:
+            type: Item[]
+
 
 
 /auth:
