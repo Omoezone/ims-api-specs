@@ -213,6 +213,15 @@ types:
           description: Item successfully deleted
         404:
           description: Item not found
+  /{userId}:
+    uriParameters:
+      userId:
+        description: The id of the item
+        type: integer
+        required: true
+    get: 
+      description: Get all items for a specific user
+
 /auth:
   /login:
     post:
