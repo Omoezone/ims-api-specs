@@ -223,10 +223,11 @@ types:
       description: Get all items for a specific user
       responses:
         200:
+          description: All items for a specific user is fetched
           body:
             type: Item[]
-
-
+        404:
+          description: User not found
 
 /auth:
   /login:
