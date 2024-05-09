@@ -43,7 +43,6 @@ types:
         description: Invalid user data provided
       409:
         description: A conflic happend with the request (mysql)
-
   /{userId}:
     uriParameters:
       userId: 
@@ -114,8 +113,17 @@ types:
             description: No invitation found
           401:
             description: Invitation no longer valid, request new invitation
-/invitations:
-  
+  /{email}:
+    
+    get:
+        description: Get possible invites to the user
+        responses:
+          200: 
+            description: Succesfully got all active invitations
+            body:
+              type: Invitation[]
+          404: 
+            description: No active invitations
 /collections:
   get:
     description: Get a list of all collections
