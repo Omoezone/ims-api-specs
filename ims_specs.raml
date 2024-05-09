@@ -16,6 +16,7 @@ types:
   UserCredentials: !include types/userCredentials.raml
   AuthUserType: !include types/authUserType.raml
   AuthTokenType: !include types/authTokenType.raml
+  Invitation: !include types/invitation.raml
   InviteSend: !include types/inviteSend.raml
   InviteAccept: !include types/inviteAccept.raml
 
@@ -107,7 +108,7 @@ types:
           200: 
             description: Succesfully got all active invitations
             body:
-              type:
+              type: Invitation[]
           404: 
             description: No active invitations
           
