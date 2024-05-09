@@ -97,7 +97,12 @@ types:
             type:  InviteSend
         responses:
           200:
-            description: Succec
+            description: Succesfully invted user to group
+          404:
+            description: User not found
+    /acceptInvite:
+      post:
+        description: Accept the 
 /collections:
   get:
     description: Get a list of all collections
