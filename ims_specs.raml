@@ -90,17 +90,12 @@ types:
           404:
             description: No collections found for the given user ID
     /sendInvite:
-      uriParameters:
-        userId: 
-          description: The id of the user
-          type: integer
-          required: true
-
       post:
         description: Create group invite for a specific user
         body:
           application/json:
-            type:  
+            type:  InviteSend
+        response:
 /collections:
   get:
     description: Get a list of all collections
