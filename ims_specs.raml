@@ -87,7 +87,15 @@ types:
               type: CollectionBase[]
           404:
             description: No collections found for the given user ID
-    /invite
+    /sendInvite:
+      uriParameters:
+        userId: 
+          description: The id of the user
+          type: integer
+          required: true
+
+      post:
+        description: send  
 /collections:
   get:
     description: Get a list of all collections
