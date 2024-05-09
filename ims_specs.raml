@@ -98,8 +98,6 @@ types:
         responses:
           201:
             description: Succesfully invted user to group
-            body:
-              type: 
           404:
             description: User not found
     /acceptInvite:
@@ -108,6 +106,8 @@ types:
         responses:
           200: 
             description: Succesfully got all active invitations
+            body:
+              type:
           404: 
             description: No active invitations
           
