@@ -114,7 +114,11 @@ types:
           401:
             description: Invitation no longer valid, request new invitation
   /{email}:
-    
+    uriParameters:
+      email: 
+        description: The id of the user
+        type: string
+        required: true
     get:
         description: Get possible invites to the user
         responses:
