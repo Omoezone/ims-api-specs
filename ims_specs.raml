@@ -16,6 +16,8 @@ types:
   UserCredentials: !include types/userCredentials.raml
   AuthUserType: !include types/authUserType.raml
   AuthTokenType: !include types/authTokenType.raml
+  InviteSend: !include types/inviteSend.raml
+  InviteAccept: !include types/inviteAccept.raml
 
 /users:
   get:
@@ -98,7 +100,7 @@ types:
         description: Create group invite for a specific user
         body:
           application/json:
-             
+            type:  
 /collections:
   get:
     description: Get a list of all collections
