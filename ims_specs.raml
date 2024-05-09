@@ -102,7 +102,14 @@ types:
             description: User not found
     /acceptInvite:
       post:
-        description: Accept the 
+        description: Accept a group invite
+        body:
+          application/json:
+            type: InviteAccept
+        responses:
+          200: 
+            description: Ac
+
 /collections:
   get:
     description: Get a list of all collections
