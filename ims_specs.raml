@@ -119,6 +119,7 @@ types:
         description: The id of the user
         type: string
         required: true
+
     /invitations:
       get:
         description: Get possible invites to the user
@@ -129,6 +130,7 @@ types:
               type: Invitation[]
           404: 
             description: No active invitations
+            
 /collections:
   get:
     description: Get a list of all collections
