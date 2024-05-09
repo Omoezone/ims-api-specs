@@ -102,7 +102,6 @@ types:
           404:
             description: User not found
     /acceptInvite:
-          
       post:
         description: Accept a group invite
         body:
@@ -115,7 +114,8 @@ types:
             description: No invitation found
           401:
             description: Invitation no longer valid, request new invitation
-
+/invitations:
+  
 /collections:
   get:
     description: Get a list of all collections
