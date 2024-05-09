@@ -102,15 +102,6 @@ types:
           404:
             description: User not found
     /acceptInvite:
-      get:
-        description: Get possible invites to the user
-        responses:
-          200: 
-            description: Succesfully got all active invitations
-            body:
-              type: Invitation[]
-          404: 
-            description: No active invitations
           
       post:
         description: Accept a group invite
