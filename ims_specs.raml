@@ -114,8 +114,9 @@ types:
           401:
             description: Invitation no longer valid, request new invitation
     /denyInvite:
-      put:
+      patch:
         description: Deny a group invite
+        
         
   /{email}:
     uriParameters:
