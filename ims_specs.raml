@@ -116,7 +116,9 @@ types:
     /denyInvite:
       patch:
         description: Deny a group invite
-        
+        body:
+          application/json:
+            type: integer
         
   /{email}:
     uriParameters:
