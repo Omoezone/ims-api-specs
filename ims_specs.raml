@@ -101,7 +101,7 @@ types:
           404:
             description: User not found
     /acceptInvite:
-      post:
+      put:
         description: Accept a group invite
         body:
           application/json:
@@ -114,7 +114,7 @@ types:
           401:
             description: Invitation no longer valid, request new invitation
     /denyInvite:
-      post:
+      put:
         description: Deny a group invite
         
   /{email}:
