@@ -113,6 +113,10 @@ types:
             description: No invitation found
           401:
             description: Invitation no longer valid, request new invitation
+    /denyInvite:
+      post:
+        description: Deny a group invite
+        
   /{email}:
     uriParameters:
       email: 
