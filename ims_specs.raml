@@ -18,7 +18,6 @@ types:
   AuthTokenType: !include types/authTokenType.raml
   Invitation: !include types/invitation.raml
   InviteSend: !include types/inviteSend.raml
-  InviteAccept: !include types/inviteAccept.raml
 
 /users:
   get:
@@ -105,7 +104,7 @@ types:
         description: Accept a group invite
         body:
           application/json:
-            type: InviteAccept
+            type: string
         responses:
           200: 
             description: Succesfully accepted/joined group invite
@@ -113,6 +112,7 @@ types:
             description: No invitation found
           401:
             description: Invitation no longer valid, request new invitation
+            
     /denyInvite:
       patch:
         description: Deny a group invite
