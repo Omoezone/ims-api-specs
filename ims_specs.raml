@@ -121,7 +121,9 @@ types:
             type: integer
         responses:
           200:
-            description: Successfully updated 
+            description: Successfully updated the invitation
+          404: 
+            description: Could not find the invition
         
   /{email}:
     uriParameters:
