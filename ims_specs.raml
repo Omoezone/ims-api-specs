@@ -95,7 +95,12 @@ types:
         description: Create a new group and add it to user
         body: 
           application/json:
-            type: 
+            type: NewGroup
+        responses: 
+          200: 
+            description: "Successfully created new group"
+          500: 
+            description: "Error with "
     /sendInvite:
       post:
         description: Create group invite for a specific user
