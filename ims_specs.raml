@@ -90,6 +90,12 @@ types:
               type: CollectionBase[]
           404:
             description: No collections found for the given user ID
+    /group:
+      post:
+        description: Create a new group and add it to user
+        body: 
+          application/json:
+            type: 
     /sendInvite:
       post:
         description: Create group invite for a specific user
