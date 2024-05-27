@@ -17,6 +17,7 @@ types:
   UserCredentials: !include types/userCredentials.raml
   AuthUserType: !include types/authUserType.raml
   AuthTokenType: !include types/authTokenType.raml
+  New
   Invitation: !include types/invitation.raml
   InviteSend: !include types/inviteSend.raml
   InviteAccept: !include types/invitationAccept.raml
@@ -100,7 +101,7 @@ types:
           200: 
             description: "Successfully created new group"
           500: 
-            description: "Error with "
+            description: "Error with creating group"
     /sendInvite:
       post:
         description: Create group invite for a specific user
