@@ -3,11 +3,11 @@
   "name": "ims_specs",
   "groupId": "1d40ff95-4409-446f-973d-a1a23f61dafc",
   "assetId": "ims_specs",
-  "version": "1.0.25",
+  "version": "1.0.0",
   "classifier": "raml",
   "tags": [],
   "descriptorVersion": "1.0.0",
-  "organizationId": "a1600366-34e7-452e-a23d-daddabc1e9c9",
+  "organizationId": "1d40ff95-4409-446f-973d-a1a23f61dafc",
   "apiVersion": "v1",
   "originalFormatVersion": "1.0"
 }
